@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-terminal</artifactId>
+  <name>Peutui :: Terminal</name>
+  <description>
+    Terminal I/O abstraction: raw-mode entry/exit, byte-level input decoding
+    into peutui-core InputEvents, frame output, and resize notification.
+    Ships a JLine-backed default implementation, but the TerminalDriver
+    strategy interface is the extension point for other backends
+    (e.g. an in-memory driver for tests, or a websocket-tunneled terminal).
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jline</groupId>
+      <artifactId>jline</artifactId>
+    </dependency>
+  </dependencies>
+</project>

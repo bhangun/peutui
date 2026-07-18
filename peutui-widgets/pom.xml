@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-widgets</artifactId>
+  <name>Peutui :: Widgets</name>
+  <description>
+    Ready-made interactive components built on peutui-core's Component model:
+    a multi-line text input with cursor/word-navigation and pluggable
+    autocomplete, a scrollable chat history list, a status bar, a spinner,
+    and the App render loop that ties a component tree to a TerminalDriver
+    with diffed frame output.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-terminal</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-agent-api</artifactId>
+    </dependency>
+  </dependencies>
+</project>

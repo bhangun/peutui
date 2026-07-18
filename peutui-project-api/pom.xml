@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-project-api</artifactId>
+  <name>Peutui :: Project API</name>
+  <description>
+    Project/workspace abstraction. A ProjectRegistry strategy lets a host
+    application run in single-project mode (one fixed workspace, like a
+    CLI invoked inside a repo) or multi-project mode (a project switcher,
+    like an IDE workspace list) without changing session/settings code.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-core</artifactId>
+    </dependency>
+  </dependencies>
+</project>

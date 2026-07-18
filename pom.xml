@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ai.gollek.peutui</groupId>
+  <artifactId>peutui-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Peutui :: Parent</name>
+  <description>
+    Peutui - a framework-agnostic, terminal UI (TUI) toolkit for building
+    interactive agent front-ends on the JVM. Provides ANSI-aware text
+    rendering, a component/render-loop model, and pluggable strategy
+    abstractions for agents, model providers, projects, sessions, settings
+    and storage, wired together via Quarkus CDI.
+  </description>
+
+  <modules>
+    <module>peutui-core</module>
+    <module>peutui-terminal</module>
+    <module>peutui-agent-api</module>
+    <module>peutui-provider-api</module>
+    <module>peutui-project-api</module>
+    <module>peutui-session-api</module>
+    <module>peutui-settings-api</module>
+    <module>peutui-storage-api</module>
+    <module>peutui-widgets</module>
+    <module>peutui-quarkus-runtime</module>
+    <module>peutui-demo-cli</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+    <quarkus.platform.version>3.15.1</quarkus.platform.version>
+    <jline.version>3.26.3</jline.version>
+    <jackson.version>2.17.2</jackson.version>
+    <picocli.version>4.7.6</picocli.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${quarkus.platform.group-id}</groupId>
+        <artifactId>${quarkus.platform.artifact-id}</artifactId>
+        <version>${quarkus.platform.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Internal modules -->
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-terminal</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-agent-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-provider-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-project-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-session-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-settings-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-storage-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-widgets</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ai.gollek.peutui</groupId>
+        <artifactId>peutui-quarkus-runtime</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Third party -->
+      <dependency>
+        <groupId>org.jline</groupId>
+        <artifactId>jline</artifactId>
+        <version>${jline.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-jsr310</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+          <configuration>
+            <release>${maven.compiler.release}</release>
+            <parameters>true</parameters>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

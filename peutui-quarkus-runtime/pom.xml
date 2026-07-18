@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-quarkus-runtime</artifactId>
+  <name>Peutui :: Quarkus Runtime</name>
+  <description>
+    Quarkus CDI wiring for every strategy abstraction defined in the API
+    modules. A single @ConfigMapping (prefix "peutui") drives which
+    implementation gets @Produces'd for project/session/settings/storage
+    mode and agent/provider selection strategy - so a host application
+    switches behavior purely through application.properties.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-terminal</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-agent-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-provider-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-project-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-session-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-settings-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-storage-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-widgets</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-agroal</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+</project>

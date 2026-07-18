@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-core</artifactId>
+  <name>Peutui :: Core</name>
+  <description>
+    Framework-agnostic rendering primitives: ANSI-aware text measurement,
+    grapheme-cluster width calculation, word navigation, a screen buffer with
+    diffing, a component/render-context model, input events, and a pluggable
+    autocomplete engine. Zero dependency on Quarkus, JLine, or any specific
+    agent/provider implementation.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

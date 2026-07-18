@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ai.gollek.peutui</groupId>
+    <artifactId>peutui-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>peutui-settings-api</artifactId>
+  <name>Peutui :: Settings API</name>
+  <description>
+    Layered settings abstraction (global &lt; user &lt; project &lt; session
+    precedence). SettingsStore is the per-scope persistence strategy (file,
+    database, cloud); LayeredSettingsResolver merges scopes so callers just
+    ask "what is the effective value of key X" without caring which layer
+    supplied it.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ai.gollek.peutui</groupId>
+      <artifactId>peutui-storage-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+  </dependencies>
+</project>
